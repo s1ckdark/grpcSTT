@@ -61,9 +61,9 @@ def transcribe_stream(audio, ws):
                     if sentence:
                         print("완성된 문장:", sentence)
                         print("번역된 문장:", papago_translate("ko","en",sentence))
-                        ws.call(requests.SetInputSettings(inputName="nbp", inputSettings={"text":  sentence}))
+                        ws.call(requests.SetInputSettings(inputName="stt", inputSettings={"text":  sentence}))
                         ws.call(requests.SetInputSettings(inputName="papago_en", inputSettings={"text":  papago_translate("ko","en",sentence)}))
-                        ws.call(requests.SetInputSettings(inputName="papago_jp", inputSettings={"text":  papago_translate("ko","ja",sentence)}))
+                        # ws.call(requests.SetInputSettings(inputName="papago_jp", inputSettings={"text":  papago_translate("ko","ja",sentence)}))
                     # ws.call(requests.SetInputSettings(inputName="nbp", inputSettings={"text":  caption["transcription"]["text"]}))
                 # print("Received response:", msg.contents)
                 # ws.call(requests.SetInputSettings(inputName="nbp", inputSettings={"text": caption.text}))
