@@ -26,3 +26,5 @@ class StreamSentenceProcessor:
             return completed_sentence
         else:
             return None
+
+# 이 부분을 고도화하면 더 좋은 성능을 얻을 수 있지만 우리는 이 정도로 충분합니다.
